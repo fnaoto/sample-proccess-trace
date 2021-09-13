@@ -2,8 +2,12 @@ version: '3'
 
 services:
   gcc:
-    image: gcc:latest
+    build: . 
+    user: root
+    platform: linux/amd64
     tty: true
     working_dir: /lib/sample-proccess-trace
-    volumes: 
+    cap_add:
+      - SYS_PTRACE
+    volumes:
       - ./lib:/lib/sample-proccess-trace
