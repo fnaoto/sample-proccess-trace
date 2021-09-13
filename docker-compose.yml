@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  gcc:
+    image: gcc:latest
+    tty: true
+    working_dir: /lib/sample-proccess-trace
+    volumes: 
+      - ./lib:/lib/sample-proccess-trace
